@@ -1,0 +1,464 @@
+/*------------------------------------------------------------------
+  [Table of contents]
+  * To keep an overview of structure of your code, we make use of table of
+  * content. Table of content is use display the overall tree structure of your
+  * Layout.
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following table of content and add your own as this is just and
+  * example to let you know)
+
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2. Body
+  3. Header / .header
+    2.1. Navigation / .navbar
+  4. Content / .content
+    4.1. Left column / .leftcolumn
+    4.2. Right column / .rightcolumn
+    4.3. Sidebar / .sidebar
+      4.3.1. RSS / .rss
+      4.3.2. Search / .search
+      4.3.3. Boxes / .box
+      4.3.4. Sideblog / .sideblog
+      4.3.5. Advertisements / .ads
+  5. Footer / .footer
+  ------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+  [Color codes]
+  * Mention the color code you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following color code and add your own as this is just and
+  * example to let you know)
+
+  Header nav: #e5e5df (Cararra)
+  Header nav a (hover): #fff (white)
+  Header nav a (active): #fff (white)
+  -------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+  [Typography]
+  * Mention the Typography you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following typography and add your own as this is just and
+  * example to let you know)
+
+  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  -------------------------------------------------------------------*/
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 0; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+input[type="radio"] {
+  vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type="button"],
+input[type="submit"],
+button {
+  cursor: pointer; }
+
+strong {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
+
+img {
+  vertical-align: middle;
+  border: 0; }
+
+sub,
+sup {
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+  vertical-align: baseline; }
+
+sup {
+  top: -.7em; }
+
+sub {
+  bottom: -.25em; }
+
+/* 1.2. Clear Fix
+========================================================================== */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " "; }
+
+.cf:after {
+  clear: both; }
+
+/*.cf {
+	*zoom: 1;
+}*/
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+ * Mention the font property (eg: font-family, font-size, font-weight, font-style
+ * etc) that have been commonly used in the html document. Make a class of it and
+ * apply to the element wherever it is needed. If any single property in changed,
+ * then override only that property in the particular class which is used for the
+ * element.
+ * (NOTE: Remove this commented code once you start
+ * developing the code. Remove the following font class and add your own
+ * as this is just and example to let you know. If there is only one font family
+ * followed throughout the site, then menstion the font property in body. No need
+ * of creating an extra class for it) */
+.futura-bold-font {
+  font-family: "Futura Bold", "Gill Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold; }
+
+/*vendor prefixes*/
+/*flexbox*/
+/*flex-basis*/
+/*jsutify-content*/
+/*flex wrap*/
+/*media queries*/
+/*calculate width*/
+.header-video h1, .header-video .banner .banner-wrapper, .services .services-wrapper, .faq-wrapper {
+  width: 81.57025%;
+  margin: 0 auto; }
+
+a {
+  display: inline-block; }
+
+/***********header***********/
+.header-video {
+  background: url(../images/video-poster.jpg) no-repeat;
+  background-position: center;
+  background-size: cover; }
+  .header-video .header-video:after {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: all 1s;
+    -webkit-transition: all 1s; }
+  .header-video header {
+    border-top: 10px solid #3D3D3D; }
+  .header-video h1 {
+    padding-top: 15px;
+    text-align: left; }
+  .header-video img {
+    width: 100%;
+    height: auto; }
+  .header-video .banner .modal {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 10% 10%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #bfbdbd;
+    overflow: hidden; }
+  .header-video .banner .cancel {
+    position: absolute;
+    top: -50px;
+    right: -31px;
+    cursor: pointer;
+    font-size: 50px; }
+  .header-video .banner .video-play {
+    width: 90%;
+    height: 90%;
+    padding-bottom: 5%;
+    margin: 0 auto;
+    position: relative; }
+  .header-video .banner video {
+    width: 100%;
+    height: auto; }
+  .header-video .banner iframe {
+    width: 100%;
+    height: 100%; }
+  .header-video .banner .banner-wrapper {
+    padding: 132px 0 52px;
+    text-align: center; }
+  .header-video .banner .play {
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer; }
+    .header-video .banner .play:hover {
+      transform: scale(1.1);
+      transition: all 1s; }
+    .header-video .banner .play img {
+      width: auto;
+      height: auto;
+      border-radius: 50%; }
+  .header-video .banner h2 {
+    margin-top: 53px;
+    color: #fff;
+    font: 700 39px Roboto, sans-serif;
+    letter-spacing: 2px; }
+  .header-video .banner h2 ~ a {
+    padding: 15px 26px;
+    border-radius: 5px;
+    margin-top: 28px;
+    background-color: #F5470B;
+    color: #fff;
+    font: 400 20px Roboto, sans-serif;
+    text-decoration: none;
+    text-transform: capitalize; }
+    .header-video .banner h2 ~ a:hover {
+      background-color: #fff;
+      color: #F5470B; }
+
+/**********main start**********/
+/*services started*/
+.services .services-wrapper {
+  padding: 70px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  text-align: center; }
+.services .services-content {
+  -webkit-flex-basis: 21.6%;
+  -moz-flex-basis: 21.6%;
+  -ms-flex-preferred-size: 21.6%;
+  flex-basis: 21.6%; }
+  .services .services-content > a:hover {
+    opacity: .8; }
+.services .rep {
+  color: #F05C26;
+  font-weight: 700; }
+.services h3 a {
+  margin: 15px 0;
+  color: #343434;
+  font: 400 20px Roboto, sans-serif;
+  text-transform: capitalize;
+  text-decoration: none; }
+  .services h3 a:hover {
+    opacity: .8; }
+.services p {
+  color: #6B6B6B;
+  font: 400 14px/17px Roboto, sans-serif; }
+
+/*faq start*/
+.faq-wrapper {
+  margin-bottom: 8%; }
+  .faq-wrapper h3 {
+    padding: 23px 26px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #EBEBEB;
+    color: #343434;
+    cursor: pointer;
+    font: 400 20px Roboto, sans-serif; }
+    .faq-wrapper h3:hover {
+      color: #EBEBEB;
+      background-color: #343434; }
+  .faq-wrapper .faq-image {
+    padding-left: 15px; }
+  .faq-wrapper h3 img {
+    width: 31px;
+    height: 31px; }
+  .faq-wrapper p {
+    padding: 25px 50px 33px 30px;
+    display: none;
+    color: #655c5c;
+    font: 400 14px/17px Roboto, sans-serif; }
+  .faq-wrapper .header-one {
+    padding-right: 80px;
+    display: block;
+    background: url(../images/minus.png) no-repeat;
+    background-position: right 25px top 50%; }
+  .faq-wrapper .header-two {
+    padding-right: 80px;
+    background: url(../images/plus.png) no-repeat;
+    background-position: right 25px top 50%; }
+  .faq-wrapper .header-three {
+    padding-right: 80px;
+    background: url(../images/plus.png) no-repeat;
+    background-position: right 25px top 50%; }
+  .faq-wrapper .minus {
+    width: 31px;
+    height: 2px;
+    margin-top: 11px; }
+  .faq-wrapper .faq-one,
+  .faq-wrapper .faq-two {
+    margin-bottom: 30px; }
+
+/*slider*/
+.slider {
+  display: block; }
+
+/*****media queries medium ******/
+/*******main*********/
+/*services*/
+@media only screen and (max-width: 950px) {
+  .services .services-wrapper {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .services .services-content {
+    -webkit-flex-basis: 42.3%;
+    -moz-flex-basis: 42.3%;
+    -ms-flex-preferred-size: 42.3%;
+    flex-basis: 42.3%; }
+  .services .services-content:nth-child(n +3) {
+    margin-top: 50px; } }
+
+/*faq*/
+@media only screen and (max-width: 950px) {
+  .faq .minus {
+    height: 2px; } }
+
+/*****media queries small ******/
+/*main*/
+/*services*/
+@media only screen and (max-width: 480px) {
+  .services .services-wrapper {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .services .services-content {
+    -webkit-flex-basis: 100%;
+    -moz-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%; }
+  .services .services-content:nth-child(n +2) {
+    margin-top: 38px; } }
+
+/*faq*/
+@media only screen and (max-width: 480px) {
+  .header-video .banner .video-play {
+    top: 35%; }
+
+  .faq .faq-wrapper h3:nth-child(-n + 2) {
+    font-size: 17px; } }
+
+/*# sourceMappingURL=style.css.map */

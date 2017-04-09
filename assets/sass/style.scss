@@ -1,0 +1,327 @@
+@import "reset";
+@import "mixins";
+
+/*calculate width*/
+@function cp($target, $container) {
+    @return $target / $container * 100%;
+}
+
+%width {
+    width: cp(987px, 1210px);
+    margin: 0 auto;
+}
+
+$font: Roboto, sans-serif;
+
+a {
+    display: inline-block;
+}
+
+/***********header***********/
+.header-video {
+    background: url(../images/video-poster.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+.header-video:after{
+    content: '\A';
+    position: absolute;
+    width: 100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+    header {
+        border-top: 10px solid #3D3D3D;
+    }
+
+    h1 {
+        @extend %width;
+
+        padding-top: 15px;
+        text-align: left;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .banner {
+
+        .modal {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;             
+            padding: 10% 10%;
+            display: none;
+            position: fixed;
+            top:0;
+            left: 0;
+            background-color: #bfbdbd;
+            overflow: hidden;                         
+        }
+
+    .cancel {
+    position: absolute;
+    top: -50px;
+    right: -31px;
+    cursor : pointer;
+    font-size: 50px;
+
+         }
+        .video-play {
+            width: 90%;
+            height: 90%;
+            padding-bottom: 5%;
+            margin: 0 auto;
+            position: relative;
+        }
+            video {
+          width: 100%;
+          height: auto;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .banner-wrapper {
+            padding: 132px 0 52px;
+            @extend %width;
+            text-align: center;
+
+        }
+
+        .play {
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.1);
+                transition: all 1s;
+            }
+            img { 
+                width: auto;
+                height: auto;
+                border-radius: 50%;
+                
+                 }
+
+        }
+
+        h2 {
+            margin-top: 53px;
+            color: #fff;
+            font: 700 39px $font;
+            letter-spacing: 2px;
+        }
+
+        h2 ~ a {
+            padding: 15px 26px;
+            border-radius: 5px;
+            margin-top: 28px;
+            background-color: #F5470B;
+            color: #fff;
+            font: 400 20px $font;
+            text-decoration: none;
+            text-transform: capitalize;
+
+            &:hover {
+                background-color: #fff;
+                color: #F5470B;
+            }
+        }
+    }
+}
+
+/**********main start**********/
+/*services started*/
+.services {
+    .services-wrapper {
+        @extend %width;
+
+        padding: 70px 0;
+
+        @include flexbox;
+        @include justify-content(space-between);
+
+        text-align: center;
+    }
+
+    .services-content {
+        @include flex-basis(21.6%);
+
+        > a {
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+    .rep {
+        color: #F05C26;
+        font-weight: 700;
+    }
+
+    h3 a {
+        margin: 15px 0;
+        color: #343434;
+        font: 400 20px $font;
+        text-transform: capitalize;
+        text-decoration: none;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+
+    p {
+        color: #6B6B6B;
+        font: 400 14px / 17px $font;
+    }
+
+}
+
+/*faq start*/
+.faq-wrapper {
+    @extend %width;
+
+    margin-bottom: 8%;
+
+    h3 {
+        padding: 23px 26px ;
+        display: flex;
+        justify-content: space-between;
+        background-color: #EBEBEB;
+        color: #343434;
+        cursor: pointer;
+        font: 400 20px $font;
+        &:hover { 
+            color: #EBEBEB;
+            background-color: #343434;
+             }
+
+    }
+    .faq-image {
+      padding-left: 15px;
+    }
+
+    h3 img {
+        width: 31px;
+        height: 31px;
+    }
+
+    p {
+        padding: 25px 50px 33px 30px;
+        display: none;
+        color: #655c5c;
+        font: 400 14px / 17px $font;
+     
+    }
+    .header-one {
+        padding-right: 80px;
+        display:block;
+        background: url(../images/minus.png) no-repeat;
+        background-position:  right 25px top 50% ;
+    }
+    .header-two {
+     padding-right: 80px;   
+     background: url(../images/plus.png) no-repeat;
+     background-position:  right 25px top 50% ;   
+    }
+    .header-three {
+        padding-right: 80px;
+        background: url(../images/plus.png) no-repeat;
+        background-position:  right 25px top 50% ;
+    }
+
+    .minus {
+        width: 31px;
+        height: 2px;
+        margin-top: 11px;
+    }
+
+    .faq-one,
+    .faq-two {
+      margin-bottom: 30px;
+    }
+}
+
+/*slider*/
+.slider {
+  display: block;  
+}
+
+/*****media queries medium ******/
+
+/*******main*********/
+
+/*services*/
+.services {
+    @include bp-medium {
+        .services-wrapper {
+            @include flex-wrap(wrap);
+        }
+
+        .services-content {
+            @include flex-basis(42.3%);
+        }
+
+        .services-content:nth-child(n +3) {
+            margin-top: 50px;
+        }
+    }
+}
+
+/*faq*/
+.faq {
+    @include bp-medium {
+
+        .minus {
+            height: 2px;
+        }
+    }
+}
+
+/*****media queries small ******/
+/*main*/
+/*services*/
+.services {
+    @include bp-small {
+        .services-wrapper {
+            @include flex-wrap(wrap);
+        }
+
+        .services-content {
+            @include flex-basis(100%);
+        }
+
+        .services-content:nth-child(n +2) {
+            margin-top: 38px;
+        }
+    }
+}
+
+/*faq*/
+
+    @include bp-small {
+      
+        .header-video .banner .video-play{
+        top: 35%;
+      }
+        
+      .faq {
+        .faq-wrapper h3:nth-child(-n + 2) {
+            font-size: 17px;
+        
+      
+      
+        }
+
+      }
+}
